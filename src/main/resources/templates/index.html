@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Listing Players - baseball</title>
+    <link rel="stylesheet" href="/css/index.css" />
+</head>
+<body>
+<div>
+    <tr th:each="title:${titles}" th:object="${title}">
+        <div class="contents-float">
+            <form th:action="@{/register}" th:method="post">
+                <p th:text="*{title}"></p>
+                <div class="contents">
+                    <div class="a">
+                        <p>A</p>
+                        <input th:value="*{id}" name="id" type="hidden">
+                        <input th:value="*{title}" name="title" type="hidden">
+                        <div class="xyzContents">
+                            <div class="inline">
+                                <p>x:</p><input th:value="*{ax}" name="ax" />
+                            </div>
+                            <div class="inline">
+                                <p>y:</p><input th:value="*{ay}" name="ay"/>
+                            </div>
+                            <div class="inline">
+                                <p>z:</p><input th:value="*{az}" name="az"/>
+                            </div>
+                            <div class="inline">
+                                <p>bb:</p><input th:value="*{abb}" name="abb"/>
+                            </div>
+                            <div class="inline">
+                                <p>ce:</p><input th:value="*{ace}" name="ace" />
+                            </div>
+                            <div class="inline">
+                                <p>ee:</p><input th:value="*{aee}"  name="aee"/>
+                            </div>
+                        </div>
+                        <button class="writeButton" type="submit">write</button>
+                    </div>
+                    <div class="bc">
+                        <div class="b">
+                            <p>B</p>
+                            <div class="xyzContents">
+                                <div class="inline">
+                                    <p>x:</p><input th:value="*{bx}" name="bx"/>
+                                </div>
+                                <div class="inline">
+                                    <p>y:</p><input th:value="*{by}" name="by"/>
+                                </div>
+                                <div class="inline">
+                                    <p>z:</p><input th:value="*{bz}" name="bz"/>
+                                </div>
+                                <div class="inline">
+                                    <p>bb:</p><input th:value="*{bbb}" name="bbb"/>
+                                </div>
+                                <div class="inline">
+                                    <p>ce:</p><input th:value="*{bce}" name="bce"/>
+                                </div>
+                                <div class="inline">
+                                    <p>ee:</p><input th:value="*{bee}" name="bee"/>
+                                </div>
+                            </div>
+                            <button class="writeButton" type="submit">write</button>
+                        </div>
+                        <div class="c">
+                            <p>C</p>
+                            <div class="xyzContents">
+                                <div class="inline">
+                                    <p>x:</p><input th:value="*{cx}" name="cx"/>
+                                </div>
+                                <div class="inline">
+                                    <p>y:</p><input th:value="*{cy}" name="cy"/>
+                                </div>
+                                <div class="inline">
+                                    <p>z:</p><input th:value="*{cz}" name="cz"/>
+                                </div>
+                                <div class="inline">
+                                    <p>bb:</p><input th:value="*{cbb}" name="cbb"/>
+                                </div>
+                                <div class="inline">
+                                    <p>ce:</p><input th:value="*{cce}" name="cce"/>
+                                </div>
+                                <div class="inline">
+                                    <p>ee:</p><input th:value="*{cee}" name="cee"/>
+                                </div>
+                            </div>
+                            <button class="writeButton" type="submit">write</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </tr>
+</div>
+<a class="btn btn-default" href="/register">新規作成</a>
+
+
+
+
+</body>
+</html>
